@@ -1,3 +1,6 @@
+
+use practice2;
+
 --select the employees whom Federal Taxes over 0.2
 select name,deductions['Federal Taxes'] from employees
 where deductions['Federal Taxes'] > 0.2;
@@ -17,14 +20,31 @@ where subordinates[1] = 'Todd Jones';
 select name from employees
 where size(subordinates) > 0;
 
---who live in there, where address zip code is 60500
+--who lives at address zip code is 60500
 select name from employees
 where address.zip=60500;
 
---who live in that city which name start with letter C
+--who lives at that city which name start with letter C
 select name,address from employees
 where address.city like 'C%';
 
---who live in Ontario or Chicago street
+--who lives at Ontario or Chicago street
 select name,address from employees
 where address.street RLIKE '^.*(Ontario|Chicago).*$';
+
+--who is not manager
+select name from employees
+where size(subordinates)<=0;
+
+--who lives at that area address zip > 60500
+select name from employees where address.zip > 60500;
+
+--which employee the Federal Taxes > 0.15
+select name,deductions['Federal Taxes'] from employees
+where deductions['Federal Taxes'] > 0.15;
+
+--who lives at Drive or Park street.
+select name,address from employees
+where address.street RLIKE '^.*(Drive|Park)*.$';
+
+
