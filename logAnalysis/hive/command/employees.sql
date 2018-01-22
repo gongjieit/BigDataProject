@@ -1,3 +1,9 @@
+create database practice2;
+
+show databases;
+
+use practice2;
+
 CREATE TABLE IF NOT EXISTS employees (
 	name	STRING,
 	salary	FLOAT,
