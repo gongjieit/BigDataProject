@@ -54,3 +54,4 @@ from record join user_dimension on record.uid= user_dimension.uid
 join brand_dimension on record.bid=brand_dimension.bid
 group by cast(DATEDIFF(CURRENT_DATE,birth)/365 as int),category
 order by age,category,totalPrice;
+
