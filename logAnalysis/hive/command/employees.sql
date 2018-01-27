@@ -20,3 +20,9 @@ STORED AS TEXTFILE;
 
 -- LOAD DATA LOCAL INPATH '/home/bigdata/hadooop/training/hive/data/employees.txt' OVERWRITE INTO TABLE employees;
 load data local inpath '/home/gj/apps/apache-hive-2.1.1-bin/hivedata/employees.txt' overwrite into table employees;
+
+
+-- lateral view explode
+select name,subordinate from employees lateral view
+explode(subordinates)
+subordinats_table as subordinate;
