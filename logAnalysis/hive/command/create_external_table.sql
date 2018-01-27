@@ -1,3 +1,6 @@
+create database practice6;
+use practice6;
+
 -- hive practice6
 hdfs dfs -ls /hive
 
